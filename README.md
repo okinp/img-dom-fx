@@ -1,6 +1,4 @@
-# Webpack Template O-E-M
-
-Webpack 4, SCSS & Babel empty template
+# Image DOM Effects
 
 ```
 yarn && yarn start
