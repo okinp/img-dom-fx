@@ -4,3 +4,89 @@
   -moz-backface-visibility: hidden;
   -ms-backface-visibility: hidden;
 }
+
+img {
+  width: 300px;
+  height: auto;
+}
+$length: 50px;
+.image-fx-container {
+  background-image: url("/images/mika-baumeister-8yOPWMS46CQ-unsplash.jpg");
+  width: 300px;
+  height: 93.75px;
+  background-clip: border-box;
+  background-size: 300px 375.062px;
+  transition: transform ease-in-out 500ms;
+  &:hover:nth-of-type(even) {
+    transform: translateX($length);
+    opacity: 0.9;
+  }
+  &:hover:nth-of-type(odd) {
+    transform: translateX(-$length);
+    opacity: 0.6;
+  }
+  &:nth-of-type(1) {
+    background-position-y: 0;
+  }
+  &:nth-of-type(2) {
+    background-position-y: calc(100% / 3);
+  }
+  &:nth-of-type(3) {
+    background-position-y: calc(2 * 100% / 3);
+  }
+  &:nth-of-type(4) {
+    background-position-y: 100%;
+  }
+}
+
+.image-fx-grid {
+  width: 300px;
+  height: 375.062px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 0px;
+  > .image-fx-cell {
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/mika-baumeister-8yOPWMS46CQ-unsplash.jpg");
+    background-clip: border-box;
+    background-size: 300px 375.062px;
+    transition: transform ease-in-out 300ms;
+    &:hover {
+      transform: rotate(5deg) translateX(2px);
+    }
+    &:nth-of-type(1) {
+      background-position-x: calc(0 * 100% / 2);
+      background-position-y: calc(0 * 100% / 3);
+    }
+    &:nth-of-type(2) {
+      background-position-x: calc(2 * 100% / 2);
+      background-position-y: calc(0 * 100% / 3);
+    }
+    &:nth-of-type(3) {
+      background-position-x: calc(0 * 100% / 2);
+      background-position-y: calc(1 * 100% / 3);
+    }
+    &:nth-of-type(4) {
+      background-position-x: calc(2 * 100% / 2);
+      background-position-y: calc(1 * 100% / 3);
+    }
+    &:nth-of-type(5) {
+      background-position-x: calc(0 * 100% / 2);
+      background-position-y: calc(2 * 100% / 3);
+    }
+    &:nth-of-type(6) {
+      background-position-x: calc(2 * 100% / 2);
+      background-position-y: calc(2 * 100% / 3);
+    }
+    &:nth-of-type(7) {
+      background-position-x: calc(0 * 100% / 2);
+      background-position-y: calc(3 * 100% / 3);
+    }
+    &:nth-of-type(8) {
+      background-position-x: calc(2 * 100% / 2);
+      background-position-y: calc(3 * 100% / 3);
+    }
+  }
+}
